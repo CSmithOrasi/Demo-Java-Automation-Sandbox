@@ -1,0 +1,12 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:my="my-namespace">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <my:createRentalRequest>
+         <my:customer_id></my:customer_id>
+         <my:staff_id></my:staff_id>
+         <my:inventory_id></my:inventory_id>
+         <my:rental_date></my:rental_date>
+         <my:return_date></my:return_date>
+      </my:createRentalRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,19 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:my="my-namespace">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <my:updateFilmRequest>
+         <my:film_id></my:film_id>
+         <my:title></my:title>
+         <my:description></my:description>
+         <my:release_year></my:release_year>
+         <my:language></my:language>
+         <my:original_language></my:original_language>
+         <my:rental_duration></my:rental_duration>
+         <my:rental_rate></my:rental_rate>
+         <my:length></my:length>
+         <my:replacement_cost></my:replacement_cost>
+         <my:rating></my:rating>
+         <my:special_features></my:special_features>
+      </my:updateFilmRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

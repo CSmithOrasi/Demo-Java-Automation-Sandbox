@@ -1,0 +1,8 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:my="my-namespace">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <my:getFilmByReleaseYearRequest>
+         <my:release_year></my:release_year>
+      </my:getFilmByReleaseYearRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

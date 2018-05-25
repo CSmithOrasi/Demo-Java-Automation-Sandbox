@@ -1,0 +1,8 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:my="my-namespace">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <my:getFilmsActorsRequest>
+         <my:film_id></my:film_id>
+      </my:getFilmsActorsRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

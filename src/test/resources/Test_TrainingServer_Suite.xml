@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TrainingServer_Suite" parallel="methods" thread-count="10">
+	<test name="TrainingServer">
+		<packages>
+			<package name="com.trainingserver.*"/>
+		</packages>
+	</test> 
+</suite> 

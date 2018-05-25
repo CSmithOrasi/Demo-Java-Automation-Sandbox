@@ -1,0 +1,8 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:my="my-namespace">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <my:getRentalByCustomerIdRequest>
+         <my:customer_id></my:customer_id>
+      </my:getRentalByCustomerIdRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

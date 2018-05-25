@@ -1,0 +1,12 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:my="my-namespace">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <my:createPaymentRequest>
+         <my:customer_id></my:customer_id>
+         <my:staff_id></my:staff_id>
+         <my:rental_id></my:rental_id>
+         <my:amount></my:amount>
+         <my:payment_date></my:payment_date>
+      </my:createPaymentRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

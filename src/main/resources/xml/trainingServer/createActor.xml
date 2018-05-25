@@ -1,0 +1,9 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:my="my-namespace">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <my:createActorRequest>
+         <my:first_name></my:first_name>
+         <my:last_name></my:last_name>
+      </my:createActorRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,8 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:my="my-namespace">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <my:getRentalByReturnDateRequest>
+         <my:return_date></my:return_date>
+      </my:getRentalByReturnDateRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

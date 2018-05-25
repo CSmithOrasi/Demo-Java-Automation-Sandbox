@@ -1,0 +1,8 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:my="my-namespace">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <my:getLanguageByNameRequest>
+         <my:language_name></my:language_name>
+      </my:getLanguageByNameRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

@@ -1,0 +1,8 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:my="my-namespace">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <my:getInventoryByIdRequest>
+         <my:inventory_id></my:inventory_id>
+      </my:getInventoryByIdRequest>
+   </soapenv:Body>
+</soapenv:Envelope>

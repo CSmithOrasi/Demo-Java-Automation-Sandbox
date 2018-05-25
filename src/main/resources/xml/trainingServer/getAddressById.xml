@@ -1,0 +1,8 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:my="my-namespace">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <my:getAddressByIdRequest>
+         <my:address_id></my:address_id>
+      </my:getAddressByIdRequest>
+   </soapenv:Body>
+</soapenv:Envelope>
