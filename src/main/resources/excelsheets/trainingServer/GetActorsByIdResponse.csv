@@ -1,0 +1,4 @@
+getActorsById,xpath,value
+,/Envelope/Body/getActorsByIdResponse/actor/actor_id,1
+,/Envelope/Body/getActorsByIdResponse/actor/first_name,PENELOPE
+,/Envelope/Body/getActorsByIdResponse/actor/last_name,GUINESS

@@ -1,0 +1,9 @@
+getAddressByCity,xpath,value
+,/Envelope/Body/getAddressByCityResponse/address[1]/address_id,\d+
+,/Envelope/Body/getAddressByCityResponse/address[2]/address_id,\d+
+,/Envelope/Body/getAddressByCityResponse/address[1]/address,47 MySakila Drive
+,/Envelope/Body/getAddressByCityResponse/address[2]/address,23 Workhaven Lane
+,/Envelope/Body/getAddressByCityResponse/address[1]/district,\s
+,/Envelope/Body/getAddressByCityResponse/address[2]/district,\s
+,/Envelope/Body/getAddressByCityResponse/address[1]/phone,\s{1}
+,/Envelope/Body/getAddressByCityResponse/address[2]/phone,\s

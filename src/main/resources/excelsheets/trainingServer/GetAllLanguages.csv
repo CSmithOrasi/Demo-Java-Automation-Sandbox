@@ -1,0 +1,13 @@
+GetAllLanguages,xpath,value
+,Envelope/Body/getAllLanguagesResponse/language[1]/language_id,\d+
+,Envelope/Body/getAllLanguagesResponse/language[1]/name,[A-Za-z]+\s*
+,Envelope/Body/getAllLanguagesResponse/language[2]/language_id,\d+
+,Envelope/Body/getAllLanguagesResponse/language[2]/name,[A-Za-z]+\s*
+,Envelope/Body/getAllLanguagesResponse/language[3]/language_id,\d+
+,Envelope/Body/getAllLanguagesResponse/language[3]/name,[A-Za-z]+\s*
+,Envelope/Body/getAllLanguagesResponse/language[4]/language_id,\d+
+,Envelope/Body/getAllLanguagesResponse/language[4]/name,[A-Za-z]+\s*
+,Envelope/Body/getAllLanguagesResponse/language[5]/language_id,\d+
+,Envelope/Body/getAllLanguagesResponse/language[5]/name,[A-Za-z]+\s*
+,Envelope/Body/getAllLanguagesResponse/language[6]/language_id,\d+
+,Envelope/Body/getAllLanguagesResponse/language[6]/name,[A-Za-z]+\s*
