@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 import com.orasi.utils.Constants;
 import com.orasi.utils.TestReporter;
-import com.trainingserver.operations.GetAllActors;
+import com.trainingserver.soap.operations.GetAllActors;
 
 public class TestTrainingServer {
 
