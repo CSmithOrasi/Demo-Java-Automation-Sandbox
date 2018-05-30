@@ -5,7 +5,6 @@ import org.testng.annotations.Test;
 import com.orasi.utils.Constants;
 import com.orasi.utils.TestReporter;
 import com.trainingserver.operations.GetAllActors;
-import com.trainingserver.operations.GetAllLanguages;
 
 public class TestTrainingServer {
 
@@ -59,14 +58,14 @@ public class TestTrainingServer {
     // TestReporter.assertTrue(getLanguage.validateResponse(excelFileLocation + "/GetLanguageById.csv", "GetLanguageById"), "Valid GetLanguageById Response");
     // }
 
-    @Test
-    public void getAllLanguages() {
-        GetAllLanguages getLanguages = new GetAllLanguages();
-        getLanguages.sendRequest();
-        int numResults = getLanguages.getNumberOfResults();
-        // TestReporter.logAPI(numResults != 0, "Results were returned (" + numResults + ")", getLanguages);
-        TestReporter.assertTrue(getLanguages.validateResponse(excelFileLocation + "/GetAllLanguages.csv", "GetAllLanguages"), "Valid GetAllLanguages Response");
-    }
+    // @Test
+    // public void getAllLanguages() {
+    // GetAllLanguages getLanguages = new GetAllLanguages();
+    // getLanguages.sendRequest();
+    // int numResults = getLanguages.getNumberOfResults();
+    // TestReporter.logAPI(numResults != 0, "Results were returned (" + numResults + ")", getLanguages);
+    // TestReporter.assertTrue(getLanguages.validateResponse(excelFileLocation + "/GetAllLanguages.csv", "GetAllLanguages"), "Valid GetAllLanguages Response");
+    // }
 
     @Test
     public void getAllActors() {
@@ -74,6 +73,8 @@ public class TestTrainingServer {
         getActors.sendRequest();
         int numResults = getActors.getNumberOfResults();
         TestReporter.logAPI(numResults != 0, "Results were returned (" + numResults + ")", getActors);
+        TestReporter.assertEquals(getActors.getFirstActorId(), "1", "HEYO");
         TestReporter.assertTrue(getActors.validateResponse(excelFileLocation + "/GetAllActors.csv", "GetAllActors"), "Valid GetAllActors Response");
     }
+
 }

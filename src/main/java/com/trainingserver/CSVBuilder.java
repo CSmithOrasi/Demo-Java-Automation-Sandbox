@@ -7,7 +7,7 @@ import java.io.IOException;
 public class CSVBuilder {
 
     public static void main(String[] args) throws IOException {
-        writeCSV("Test", 6);
+        writeCSV("GetAllActors", 205);
     }
 
     private static void writeCSV(String scenario, int numResults) throws IOException {
@@ -18,8 +18,9 @@ public class CSVBuilder {
         writer.write(scenario + ",xpath,value\n");
         // For each node within a given range, write an xpath and regex
         for (int i = 1; i <= numResults; i++) {
-            writer.write(",Envelope/Body/" + decapitalize(scenario) + "Response/language[" + i + "]/language_id,\\d+\r\n");
-            writer.write(",Envelope/Body/" + decapitalize(scenario) + "Response/language[" + i + "]/name,[A-Za-z]+\\s*\r\n");
+            writer.write(",Envelope/Body/" + decapitalize(scenario) + "Response/actor[" + i + "]/actor_id,\\d+\r\n");
+            writer.write(",Envelope/Body/" + decapitalize(scenario) + "Response/actor[" + i + "]/first_name,[\\w-]+\\s*\r\n");
+            writer.write(",Envelope/Body/" + decapitalize(scenario) + "Response/actor[" + i + "]/last_name,[\\w-]+\\s*\r\n");
         }
         writer.close();
     }
