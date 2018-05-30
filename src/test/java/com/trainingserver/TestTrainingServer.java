@@ -72,6 +72,9 @@ public class TestTrainingServer {
         GetAllActors getActors = new GetAllActors();
         getActors.sendRequest();
         int numResults = getActors.getNumberOfResults();
+        System.out.println("#########################################################");
+        System.out.println(getActors.getResponse());
+        System.out.println("#########################################################");
         TestReporter.logAPI(numResults != 0, "Results were returned (" + numResults + ")", getActors);
         TestReporter.assertEquals(getActors.getFirstActorId(), "1", "HEYO");
         TestReporter.assertTrue(getActors.validateResponse(excelFileLocation + "/GetAllActors.csv", "GetAllActors"), "Valid GetAllActors Response");
