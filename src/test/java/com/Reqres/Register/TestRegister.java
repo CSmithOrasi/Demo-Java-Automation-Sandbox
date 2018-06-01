@@ -21,6 +21,8 @@ public class TestRegister {
         RestResponse response = RestReqres.register().createRegister(request);
         Response data = response.mapJSONToObject(Response.class);
 
+        System.out.println(response.getResponse());
+
         TestReporter.assertTrue(data.getToken().equals("QpwL5tke4Pnpja7X"), "Validating the token ID");
     }
 }

@@ -18,9 +18,9 @@ public class CSVBuilder {
         writer.write(scenario + ",xpath,value\n");
         // For each node within a given range, write an xpath and regex
         for (int i = 1; i <= numResults; i++) {
-            writer.write(",Envelope/Body/" + decapitalize(scenario) + "Response/actor[" + i + "]/actor_id,\\d+\r\n");
-            writer.write(",Envelope/Body/" + decapitalize(scenario) + "Response/actor[" + i + "]/first_name,[\\w-]+\\s*\r\n");
-            writer.write(",Envelope/Body/" + decapitalize(scenario) + "Response/actor[" + i + "]/last_name,[\\w-]+\\s*\r\n");
+            writer.write(",Envelope/Body/" + decapitalize(scenario) + "Response/actor[" + i + "]/actorId,\\d+\r\n");
+            writer.write(",Envelope/Body/" + decapitalize(scenario) + "Response/actor[" + i + "]/firstName,[\\w-]+\\s*\r\n");
+            writer.write(",Envelope/Body/" + decapitalize(scenario) + "Response/actor[" + i + "]/lastName,[\\w-]+\\s*\r\n");
         }
         writer.close();
     }

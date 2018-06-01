@@ -7,6 +7,6 @@ public class GetAllActors extends OperationsTemplate {
     }
 
     public String getFirstActorId() {
-        return getResponseNodeValueByXPath("/Envelope/Body/getAllActorsResponse/actor/actor_id");
+        return getResponseNodeValueByXPath("/Envelope/Body/getAllActorsResponse/actor/actorId");
     }
 }

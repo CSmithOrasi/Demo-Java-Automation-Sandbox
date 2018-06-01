@@ -1,4 +1,4 @@
-package com.trainingserver;
+package com.trainingserver.soap;
 
 import org.testng.annotations.Test;
 
@@ -6,7 +6,7 @@ import com.orasi.utils.Constants;
 import com.orasi.utils.TestReporter;
 import com.trainingserver.soap.operations.GetAllActors;
 
-public class TestTrainingServer {
+public class TestSoap {
 
     private String excelFileLocation = Constants.EXCEL_SHEETS + "/trainingServer";
 
@@ -72,9 +72,6 @@ public class TestTrainingServer {
         GetAllActors getActors = new GetAllActors();
         getActors.sendRequest();
         int numResults = getActors.getNumberOfResults();
-        System.out.println("#########################################################");
-        System.out.println(getActors.getResponse());
-        System.out.println("#########################################################");
         TestReporter.logAPI(numResults != 0, "Results were returned (" + numResults + ")", getActors);
         TestReporter.assertEquals(getActors.getFirstActorId(), "1", "HEYO");
         TestReporter.assertTrue(getActors.validateResponse(excelFileLocation + "/GetAllActors.csv", "GetAllActors"), "Valid GetAllActors Response");
