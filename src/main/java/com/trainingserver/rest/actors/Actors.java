@@ -6,6 +6,11 @@ import com.orasi.api.restServices.RestService;
 import com.trainingserver.rest.TrainingServerRest;
 import com.trainingserver.rest.actors.objects.ActorListing;
 
+/**
+ *
+ * @author christopher.smith
+ *
+ */
 public class Actors {
     private RestService restService = new RestService();
     private String path = TrainingServerRest.baseURL + "/rest/actors";

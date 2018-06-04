@@ -2,8 +2,8 @@
    <soapenv:Header/>
    <soapenv:Body>
       <my:createActorRequest>
-         <my:first_name></my:first_name>
-         <my:last_name></my:last_name>
+         <my:firstName></my:firstName>
+         <my:lastName></my:lastName>
       </my:createActorRequest>
    </soapenv:Body>
 </soapenv:Envelope>

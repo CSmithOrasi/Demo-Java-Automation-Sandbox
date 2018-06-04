@@ -1,20 +1,25 @@
 package com.trainingserver.rest;
 
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.orasi.api.restServices.RestResponse;
 import com.orasi.utils.TestReporter;
 import com.trainingserver.rest.actors.objects.ActorListing;
 
+/**
+ *
+ * @author christopher.smith
+ *
+ */
 public class TestRest {
     ActorListing actor;
 
-    // Turns on logging to console:
-    // @BeforeClass
-    // public void activateLogging() {
-    // TestReporter.setDebugLevel(TestReporter.TRACE);
-    // TestReporter.setPrintToConsole(true);
-    // }
+    @BeforeClass
+    public void activateLogging() {
+        TestReporter.setDebugLevel(TestReporter.TRACE);
+        TestReporter.setPrintToConsole(true);
+    }
 
     @Test
     public void testGetAllActors() {
