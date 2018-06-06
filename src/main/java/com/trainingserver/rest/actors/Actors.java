@@ -4,7 +4,7 @@ import com.orasi.api.restServices.Headers.HeaderType;
 import com.orasi.api.restServices.RestResponse;
 import com.orasi.api.restServices.RestService;
 import com.trainingserver.rest.TrainingServerRest;
-import com.trainingserver.rest.actors.objects.ActorListing;
+import com.trainingserver.rest.actors.objects.Actor;
 
 /**
  *
@@ -19,19 +19,19 @@ public class Actors {
         return restService.sendGetRequest(path + "/", HeaderType.JSON);
     }
 
-    public RestResponse getActorsByFirstName(ActorListing actor) {
+    public RestResponse getActorsByFirstName(Actor actor) {
         return restService.sendGetRequest(path + "/first_name/" + actor.getFirstName(), HeaderType.JSON);
     }
 
-    public RestResponse createActor(ActorListing actor) {
-        return restService.sendPutRequest(path + "/create", HeaderType.JSON, RestService.getJsonFromObject(actor));
+    public RestResponse createActor(Actor actor) {
+        return restService.sendPostRequest(path, HeaderType.JSON, RestService.getJsonFromObject(actor));
     }
 
-    public RestResponse deleteActor(ActorListing actor) {
-        return restService.sendDeleteRequest(path + "/" + actor.getActorId() + "/delete", HeaderType.JSON);
+    public RestResponse deleteActor(Actor actor) {
+        return restService.sendDeleteRequest(path + "/" + actor.getActorId(), HeaderType.JSON);
     }
 
-    public RestResponse updateActor(ActorListing actor) {
-        return restService.sendPostRequest(path + "/" + actor.getActorId() + "/update", HeaderType.JSON, RestService.getJsonFromObject(actor));
+    public RestResponse updateActor(Actor actor) {
+        return restService.sendPutRequest(path + "/" + actor.getActorId(), HeaderType.JSON, RestService.getJsonFromObject(actor));
     }
 }

@@ -5,33 +5,33 @@ import org.testng.annotations.Test;
 
 import com.orasi.api.restServices.RestResponse;
 import com.orasi.utils.TestReporter;
-import com.trainingserver.rest.actors.objects.ActorListing;
+import com.trainingserver.rest.actors.objects.Actor;
 
 /**
  *
  * @author christopher.smith
  *
  */
-public class TestRest {
-    ActorListing actor;
+public class TestActors {
+    Actor actor;
 
     @BeforeClass
     public void activateLogging() {
-        TestReporter.setDebugLevel(TestReporter.TRACE);
-        TestReporter.setPrintToConsole(true);
+        // TestReporter.setDebugLevel(TestReporter.TRACE);
+        // TestReporter.setPrintToConsole(true);
     }
 
     @Test
     public void testGetAllActors() {
         RestResponse response = TrainingServerRest.actors().getAllActors();
 
-        ActorListing[] list = response.mapJSONToObject(ActorListing[].class);
+        Actor[] list = response.mapJSONToObject(Actor[].class);
 
         // ALTERNATIVE:
         // Gson gson = new Gson();
         // gson.fromJson(response.getResponse(), new TypeToken<ArrayList<ActorListing>>() {}.getType());
 
-        for (ActorListing actor : list) {
+        for (Actor actor : list) {
             TestReporter.assertTrue(actor.getFirstName().matches("[A-Za-z?]+"), "Validating firstName format: " + actor.getFirstName());
             TestReporter.assertTrue(actor.getFirstName().matches("[A-Za-z?]+"), "Validating lastName format: " + actor.getLastName());
         }
@@ -40,12 +40,12 @@ public class TestRest {
     @Test
     public void testGetActorsByFirstName() {
         String firstName = "tom";
-        ActorListing actor = new ActorListing();
+        Actor actor = new Actor();
         actor.setFirstName(firstName);
         RestResponse response = TrainingServerRest.actors().getActorsByFirstName(actor);
-        ActorListing[] actors = response.mapJSONToObject(ActorListing[].class);
+        Actor[] actors = response.mapJSONToObject(Actor[].class);
 
-        for (ActorListing currentActor : actors) {
+        for (Actor currentActor : actors) {
             TestReporter.assertTrue(currentActor.getFirstName().toLowerCase().equals(firstName),
                     "Validating firstName for: " + currentActor.getFirstName() + " " + currentActor.getLastName());
         }
@@ -56,12 +56,12 @@ public class TestRest {
         String firstName = "FAKE";
         String lastName = "ACTOR";
 
-        actor = new ActorListing();
+        actor = new Actor();
         actor.setFirstName(firstName);
         actor.setLastName(lastName);
 
         RestResponse response = TrainingServerRest.actors().createActor(actor);
-        actor = response.mapJSONToObject(ActorListing.class);
+        actor = response.mapJSONToObject(Actor.class);
 
         TestReporter.assertEquals(actor.getFirstName(), firstName, "Validate created actor first name: " + actor.getFirstName());
         TestReporter.assertEquals(actor.getLastName(), lastName, "Validate created actor last name: " + actor.getLastName());
@@ -76,7 +76,7 @@ public class TestRest {
         actor.setLastName(lastName);
 
         RestResponse response = TrainingServerRest.actors().updateActor(actor);
-        actor = response.mapJSONToObject(ActorListing.class);
+        actor = response.mapJSONToObject(Actor.class);
 
         TestReporter.assertEquals(actor.getFirstName(), firstName, "Validate updated actor first name: " + actor.getFirstName());
         TestReporter.assertEquals(actor.getLastName(), lastName, "Validate updated actor last name: " + actor.getLastName());
@@ -88,4 +88,6 @@ public class TestRest {
 
         TestReporter.assertEquals("Actor [" + actor.getActorId() + "] was deleted successfully.", response.getResponse(), "Validate delete actor response");
     }
+    
+    
 }
