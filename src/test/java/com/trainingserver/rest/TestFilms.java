@@ -44,7 +44,9 @@ public class TestFilms {
         String rating = "PG";
         String specialFeatures = "{}";
         int releaseYear = 2000;
-        Actor[] actors = new Actor[0];
+        Actor actor = new Actor();
+        actor.setActorId(1);
+        Actor[] actors = { actor };
 
         film = new Film();
         film.setTitle(title);
@@ -57,18 +59,7 @@ public class TestFilms {
         film.setActors(actors);
 
         RestResponse response = TrainingServerRest.films().createFilm(film);
-
-        // System.out.println(response.getRequestBody());
-        // System.out.println(response.getResponse());
-
-        Film newFilm = response.mapJSONToObject(Film.class);
-        System.out.println(response.getResponse());
-
-        film.setFilmId(newFilm.getFilmId());
-
-        // System.out.println(film.equals(newFilm) + "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
-
-        film = newFilm;
+        film = response.mapJSONToObject(Film.class);
 
         TestReporter.assertEquals(title, film.getTitle(), "title of new film == request title");
         TestReporter.assertEquals(description, film.getDescription(), "description of new film == request description");

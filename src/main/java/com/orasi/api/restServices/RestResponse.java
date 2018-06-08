@@ -154,6 +154,7 @@ public class RestResponse {
         } catch (JsonParseException e) {
             throw new RestException("Failed to parse JSON", e);
         } catch (IOException e) {
+            System.out.println(e.getMessage());
             throw new RestException("Failed to Map JSON", e);
         }
         return map;

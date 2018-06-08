@@ -1,10 +1,9 @@
 package com.trainingserver.rest.films.objects;
 
-import java.lang.reflect.Field;
-
 import com.trainingserver.rest.actors.objects.Actor;
+import com.trainingserver.rest.objects.RestObject;
 
-public class Film {
+public class Film extends RestObject {
     private int filmId;
     private String title;
     private String description;
@@ -167,65 +166,66 @@ public class Film {
     // return resultList;
     // }
 
-    @Override
-    public boolean equals(Object obj) {
-        Film film;
-
-        if (!(obj instanceof Film)) {
-            return false;
-        } else {
-            film = (Film) obj;
-        }
-        Field[] fields = this.getClass().getDeclaredFields();
-
-        for (Field field : fields) {
-
-            try {
-                if (field.getType() == Actor[].class) {
-                    Actor[] theseActors = (Actor[]) field.get(this);
-                    Actor[] thoseActors = (Actor[]) field.get(film);
-
-                    if (theseActors != null && thoseActors != null) {
-                        if (theseActors.length != thoseActors.length) {
-                            return false;
-                        }
-
-                        if (theseActors.length == 0) {
-                            continue;
-                        }
-
-                        for (int i = 0; i < theseActors.length; i++) {
-                            if (theseActors[i] == null && thoseActors[i] == null) {
-                                continue;
-                            }
-                            if (theseActors[i] != null && thoseActors[i] == null ||
-                                    theseActors[i] == null && thoseActors[i] != null ||
-                                    !theseActors[i].equals(thoseActors[i])) {
-                                return false;
-                            }
-                        }
-                    } else if (theseActors == null && thoseActors == null) {
-                        continue;
-                    } else if (theseActors == null || thoseActors == null) {
-                        return false;
-                    }
-                }
-
-                if (field.get(film) != null && field.get(this) != null) {
-                    if (!field.get(this).equals(field.get(film))) {
-                        return false;
-                    }
-                } else if (field.get(film) == null && field.get(this) == null) {
-                    continue;
-                } else if (field.get(film) == null || field.get(this) == null) {
-                    return false;
-                }
-            } catch (IllegalArgumentException | IllegalAccessException e) {
-                return false;
-            }
-        }
-
-        return true;
-    }
+    // @Override
+    // public boolean equals(Object obj) {
+    // Film film;
+    //
+    // if (!(obj instanceof Film)) {
+    // return false;
+    // } else {
+    // film = (Film) obj;
+    // }
+    //
+    // Field[] fields = this.getClass().getDeclaredFields();
+    //
+    // for (Field field : fields) {
+    //
+    // try {
+    // if (field.getType() == Actor[].class) {
+    // Actor[] theseActors = (Actor[]) field.get(this);
+    // Actor[] thoseActors = (Actor[]) field.get(film);
+    //
+    // if (theseActors != null && thoseActors != null) {
+    // if (theseActors.length != thoseActors.length) {
+    // return false;
+    // }
+    //
+    // if (theseActors.length == 0) {
+    // continue;
+    // }
+    //
+    // for (int i = 0; i < theseActors.length; i++) {
+    // if (theseActors[i] == null && thoseActors[i] == null) {
+    // continue;
+    // }
+    // if (theseActors[i] != null && thoseActors[i] == null ||
+    // theseActors[i] == null && thoseActors[i] != null ||
+    // !theseActors[i].equals(thoseActors[i])) {
+    // return false;
+    // }
+    // }
+    // } else if (theseActors == null && thoseActors == null) {
+    // continue;
+    // } else if (theseActors == null || thoseActors == null) {
+    // return false;
+    // }
+    // }
+    //
+    // if (field.get(film) != null && field.get(this) != null) {
+    // if (!field.get(this).equals(field.get(film))) {
+    // return false;
+    // }
+    // } else if (field.get(film) == null && field.get(this) == null) {
+    // continue;
+    // } else if (field.get(film) == null || field.get(this) == null) {
+    // return false;
+    // }
+    // } catch (IllegalArgumentException | IllegalAccessException e) {
+    // return false;
+    // }
+    // }
+    //
+    // return true;
+    // }
 
 }
