@@ -22,19 +22,19 @@ public class TestFilms {
         // TestReporter.setPrintToConsole(true);
     }
 
-    // @Test
-    // public void testGetAllFilms() {
-    // RestResponse response = TrainingServerRest.films().getAllFilms();
-    //
-    // Film[] films = response.mapJSONToObject(Film[].class);
-    //
-    // for (Film film : films) {
-    // System.out.println(film.getTitle());
-    // for (Actor actor : film.getActors()) {
-    // System.out.println("\t" + actor.getFirstName() + " " + actor.getLastName());
-    // }
-    // }
-    // }
+    @Test
+    public void testGetAllFilms() {
+        RestResponse response = TrainingServerRest.films().getAllFilms();
+
+        Film[] films = response.mapJSONToObject(Film[].class);
+
+        for (Film film : films) {
+            System.out.println(film.getTitle());
+            for (Actor actor : film.getActors()) {
+                System.out.println("\t" + actor.getFirstName() + " " + actor.getLastName());
+            }
+        }
+    }
 
     @Test
     public void testCreateFilm() {

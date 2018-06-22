@@ -27,10 +27,6 @@ public class TestActors {
 
         Actor[] list = response.mapJSONToObject(Actor[].class);
 
-        // ALTERNATIVE:
-        // Gson gson = new Gson();
-        // gson.fromJson(response.getResponse(), new TypeToken<ArrayList<ActorListing>>() {}.getType());
-
         for (Actor actor : list) {
             TestReporter.assertTrue(actor.getFirstName().matches("[A-Za-z?]+"), "Validating firstName format: " + actor.getFirstName());
             TestReporter.assertTrue(actor.getFirstName().matches("[A-Za-z?]+"), "Validating lastName format: " + actor.getLastName());
@@ -88,6 +84,5 @@ public class TestActors {
 
         TestReporter.assertEquals("Actor [" + actor.getActorId() + "] was deleted successfully.", response.getResponse(), "Validate delete actor response");
     }
-    
-    
+
 }
