@@ -123,7 +123,17 @@ public class Film extends RestObject {
         this.category = category;
     }
 
-    public Actor[] getActors() {
+    public int[] getActors() {
+        int[] actorIds = new int[actors.length];
+
+        for (int i = 0; i < actors.length; i++) {
+            actorIds[i] = actors[i].getActorId();
+        }
+
+        return actorIds;
+    }
+
+    public Actor[] getActorObjects() {
         return actors;
     }
 
